@@ -1,0 +1,15 @@
+
+b
+java:S21848"ECast one of the operands of this subtraction operation to a "double".(Ψ¶γ™8Λÿ„χό2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ΝΩώεόÿÿÿÿ8Νÿ„χό2
+L	java:S106^"+Replace this use of System.out by a logger.(³πΈϋÿÿÿÿ8‰€…χό2
+L	java:S106k"+Replace this use of System.out by a logger.(ΧΖόωÿÿÿÿ8‹€…χό2
+G	java:S106r"+Replace this use of System.out by a logger.(”¥›’8‹€…χό2
+S
+java:S1854~"7Remove this useless assignment to local variable "arr".(ΙΣ8€…χό2
+]	java:S125}"<This block of commented-out lines of code should be removed.(άΖψϋÿÿÿÿ8€…χό2
+D
+java:S1481~"(Remove this unused "arr" local variable.(ΙΣ8€…χό2
+G	java:S106"+Replace this use of System.out by a logger.(έΔ™χ8€…χό2
+i
+java:S1128"GRemove this unused import 'org.apache.tomcat.util.modeler.FeatureInfo'.(ρ•πΕώÿÿÿÿ8€…χό2
