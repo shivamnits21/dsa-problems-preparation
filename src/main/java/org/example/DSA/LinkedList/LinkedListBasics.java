@@ -6,7 +6,6 @@ package org.example.DSA.LinkedList;
 //I'm  landing on the same node that i've to delete i can do it by copy data of the  next node
 // currentNode.data = current.next.data, current.next = current.next.next if deleted node is not the last node.
 
-import org.apache.catalina.users.SparseUserDatabase;
 
 public class LinkedListBasics {
 

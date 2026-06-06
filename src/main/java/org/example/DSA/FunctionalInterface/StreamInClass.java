@@ -1,13 +1,10 @@
 package org.example.DSA.FunctionalInterface;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.apache.coyote.http11.Constants.a;
 
 public class StreamInClass {
 

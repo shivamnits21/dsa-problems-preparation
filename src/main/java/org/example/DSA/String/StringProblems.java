@@ -1,6 +1,5 @@
 package org.example.DSA.String;
 
-import org.apache.tomcat.util.buf.Ascii;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -119,7 +118,7 @@ public class StringProblems {
 //        "abcdef".contains("acf")  → false
 
         String name = "  Shivam Singh gonna be best  ";
-        name.strip();
+       // name.strip();
         System.out.println(name);
 
         System.out.println(('Z' - 'a'));
