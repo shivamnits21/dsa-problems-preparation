@@ -11,6 +11,20 @@ public class RecursionArrayProblems {
     //4. Find the all element in the array and return the list(List outside the method), add the list in the parameter,
     //creting the arraylist inside the function
 
+    public static ArrayList<Integer> findallElements4(int[] arr, int target, int index){
+       ArrayList<Integer> list = new ArrayList<>();
+        if(index == arr.length -1){
+            return list;
+        }
+        //this will contain answer or that call only coz new list getting created at every function call.
+        if(arr[index] == target){
+            list.add(index);
+        }
+        ArrayList<Integer> answerFromBelowCalls = findallElements4(arr, target, index + 1);
+        list.addAll(answerFromBelowCalls);
+        return list;
+    }
+
     // pass the create the list inside the method
 
     public static ArrayList<Integer> findAllElements3(int[] arr,int target, int index,ArrayList<Integer> list){
@@ -44,15 +58,15 @@ public class RecursionArrayProblems {
     }
 
      // creating the list outside.
-     static ArrayList<Integer> list = new ArrayList<>();
+    // static ArrayList<Integer> list = new ArrayList<>();
     public static ArrayList<Integer> findAllElements(int[] arr,int target, int index){
 
         if(index == arr.length -1){
-            return list;
+            //            return list;
         }
 
         if(arr[index] == target){
-            list.add(index);
+            //list.add(index);
         }
 
         return findAllElements(arr,target,index+1);

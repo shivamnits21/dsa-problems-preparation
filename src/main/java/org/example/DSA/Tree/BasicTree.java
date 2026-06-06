@@ -1,6 +1,5 @@
 package org.example.DSA.Tree;
 
-import lombok.val;
 
 import java.util.Scanner;
 

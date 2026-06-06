@@ -1,6 +1,5 @@
 package org.example.DSA.Tree;
 
-import org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorHSQLDBDatabaseImpl;
 
 public class BinarySearchTree {
 
