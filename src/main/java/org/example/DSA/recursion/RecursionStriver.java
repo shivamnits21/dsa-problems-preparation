@@ -1,8 +1,87 @@
 package org.example.DSA.recursion;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
+//lectures to revise: 11, 13
+
 public class RecursionStriver {
+
+    //16. All permutations of String/Array
+
+
+    //15. Leetcode: https://leetcode.com/problems/subsets-ii/description/?envType=problem-list-v2&envId=backtracking
+
+
+    //14.All the subset sum problem
+
+
+
+    //13. combination sum 2
+
+
+    //12. https://leetcode.com/problems/combination-sum/submissions/1767051219/
+
+
+    //11. count the subsequences with sum = k.
+
+
+    //10. print only one subsequence whose sum is equal to target.
+
+
+    //9. subsequences whose sum is equal to target in array [1,2,3]
+
+
+
+
+    //8. print subsequence of array given [1,2,3]
+
+    public static void subseQuenceSum(int[] p, int[] up, int index){
+
+        if(index == up.length -1){
+            System.out.println(Arrays.toString(p));
+            return;
+        }
+
+        subseQuenceSum(p, up, index + 1);
+        subseQuenceSum(p, up, index + 1);
+    }
+
+
+    //7. print all the subsequences
+
+    public static ArrayList<String> retSubse(String p, String up){
+
+        if(up.isEmpty()){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+
+        char c = up.charAt(0);
+
+        ArrayList<String> left = retSubse(p + c, up.substring(1));
+        ArrayList<String>  right = retSubse(p , up.substring(1));
+
+        left.addAll(right);
+
+        return left;
+
+    }
+
+    public static void printSubse(String p, String up){
+
+        if(up.isEmpty()){
+            System.out.println(p);
+            return;
+        }
+
+        char  c = up.charAt(0);
+        printSubse(p + c, up.substring(1));
+        printSubse(p, up.substring(1));
+
+    }
+
 
     //6. Fibonacci Number
 
@@ -93,6 +172,8 @@ public class RecursionStriver {
       //  int[] arr = { 3, 5,7,2,7,4};
 
         //String s = "abccba";
-        System.out.println(fibonacci(6));
+        System.out.println(retSubse("", "abc"));
+
+        //printSubse("", "abc");
     }
 }

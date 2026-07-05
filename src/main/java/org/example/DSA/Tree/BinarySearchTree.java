@@ -1,102 +1,105 @@
 package org.example.DSA.Tree;
 
-
 public class BinarySearchTree {
 
-   public class Node {
-        int val;
+    public class Node{
         Node left;
         Node right;
+        int value;
+
         int height;
 
-        Node(int val){
-            this.val = val;
+        Node(int value){
+            this.value = value;
         }
 
         public int getValue(){
-            return val;
+            return value;
         }
     }
 
-    Node root;
+     Node root;
 
     public int height(Node node){
         if(node == null){
             return -1;
         }
+
         return node.height;
     }
 
-    public boolean isEmpty(Node node){
-        return node == null;
+    public boolean isEmpty(){
+        return root == null;
+    }
+
+    public void insert(int value){
+      //  Node node = new Node(value);
+        root = populate(value, root);
+    }
+
+    public Node populate(int value, Node node){
+
+        if(node == null){
+            node = new Node(value);
+            return node;
+        }
+
+        if(value < node.value){
+            node.left = populate(value,node.left);
+        }
+
+        if(value > node.value){
+            node.right = populate(value, node.right);
+        }
+
+        node.height = Math.max(height(root.left), height(root.right)) + 1;
+
+        return node;
+    }
+
+    public void populate(int[] nums){
+        for(int i = 0; i < nums.length; i++){
+            insert(nums[i]);
+        }
     }
 
     public boolean balanced(){
         return balanced(root);
     }
 
-    private boolean balanced (Node node){
-        if(node == null){
-            return true;
-        }
-
-        return Math.abs(height(node.left) - height(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
+    private boolean balanced(Node node){
+     if(node == null){
+         return true;
+     }
+     return Math.abs(height(node.left) - height(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
     }
-
-    public void insert(int value){
-        root = insert(root, value);
-    }
-
-    public Node insert(Node node, int value){
-        if(node == null){
-            Node newNode = new Node(value);
-            return newNode;
-        }
-
-        if(value < node.val){
-            node.left = insert(node.left, value);
-        }
-
-        if(value > node.val){
-            node.right = insert(node.right, value);
-        }
-
-        node.height = Math.max(height(node.left), height(node.right)) + 1;
-
-        return node;
-    }
-
-    public void populate(int[] nums){
-        for(int i = 0; i< nums.length; i++){
-            insert(nums[i]);
-        }
-    }
-
 
 
     public void display(){
-
-        display(root,"Root Node : ");
+        display(root, "Root Node: ");
     }
 
-    public void display(Node node, String details){
+    private void display(Node node, String details) {
         if(node == null){
             return;
         }
-
-        System.out.println(details + node.val);
-        display(node.left, "Left child of: " + node.getValue() + ": ");
-        display(node.right, "Right child of: " + node.getValue() + ": ");
+        System.out.println(details + node.getValue());
+        display(node.left, "left child of " + node.getValue()+ ": ");
+        display(node.right, "right child of " + node.getValue()+ ": ");
     }
 
 
+
+
+
+
     public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
+     BinarySearchTree tree = new BinarySearchTree();
 
-        int[] nums = {5,2,1,4,7,10};
+     int[] arr = new int[]{15,8,5,11,9,17,13,20};
 
-        tree.populate(nums);
-        tree.display();
+     tree.populate(arr);
+     tree.display();
     }
 
 
